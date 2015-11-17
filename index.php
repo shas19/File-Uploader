@@ -99,7 +99,8 @@ $(window).resize(function(){window.location.href=window.location.href})
        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li id="myBtn"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+      	<li id="myBt"><a href="#"><span class="glyphicon glyphicon-log-i"></span> Sign in</a></li>
+	</ul>
     </div>
   </div>
 </nav>
@@ -116,14 +117,14 @@ $(window).resize(function(){window.location.href=window.location.href})
           <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+          <form role="form" action="login.php" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              <input type="text" class="form-control" name="email"  placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" id="psw" placeholder="Enter password">
+              <input type="password" class="form-control" name="password"  placeholder="Enter password">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
@@ -140,6 +141,51 @@ $(window).resize(function(){window.location.href=window.location.href})
       
     </div>
   </div> 
+
+#for signup page...
+  <div class="modal fade" id="myModa" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Sign In</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" action="signin.php" method="post">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" name="email"  placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Enter password">
+            </div>
+          
+	   <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Confirm Password</label>
+              <input type="password" class="form-control" name="cpassword" placeholder="Enter password">
+            </div>
+    
+
+	<div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign In</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+
  
 <script>
 $(document).ready(function(){
@@ -149,7 +195,62 @@ $(document).ready(function(){
 });
 </script>
 
-<div id="upload_box"></div>
+<script>
+$(document).ready(function(){
+    $("#myBt").click(function(){id="myBt"
+        $("#myModa").modal();
+    });
+});
+</script>
+
+
+
+
+
+
+
+<div id="upload_box">
+	<div class="container">
+	<section id="content">
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+			<h2>Upload your files here!</h2>
+			<div>
+				<input type="text" placeholder="Name" required="" name="Name" />
+			</div>
+			<br><br>
+
+			<div>
+				<input type="text" placeholder="Message" required="" name="Message" />
+			</div>
+		
+			<br><br>
+
+			<div>
+				<input type="file" placeholder="Your file" name="myfile">
+			<br><br>
+
+
+			<div>
+		    
+			<div> <input type="submit"	name="Upload it!"	</div>
+
+			<br>
+				<a href="#">Lost your password?</a>
+			<br>
+
+				<a href="#">Register</a>
+			</div>
+		</form><!-- form -->
+		<div class="button">
+			<a href="#">Download source file</a>
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>
+
+</div>
+
 <!--<div id="drop_box"></div>-->
 
 </body>
